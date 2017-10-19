@@ -38,6 +38,7 @@ namespace Git_Client
             p.StartInfo.RedirectStandardInput = false;
             //ウィンドウを表示しないようにする
             p.StartInfo.CreateNoWindow = true;
+
         }
 
         private void button5_Click(object sender, EventArgs e)
