@@ -37,15 +37,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.StageBtn = new System.Windows.Forms.Button();
+            this.repositoryRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gitClientについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StagedFiles = new System.Windows.Forms.ListBox();
-            this.UnstageBtn = new System.Windows.Forms.Button();
             this.UnstagedFiles = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.Line = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,13 +56,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repositoryRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gitClientについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Commit
@@ -69,7 +74,7 @@
             this.Commit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Commit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Commit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Commit.Location = new System.Drawing.Point(497, 407);
+            this.Commit.Location = new System.Drawing.Point(497, 432);
             this.Commit.Name = "Commit";
             this.Commit.Size = new System.Drawing.Size(75, 74);
             this.Commit.TabIndex = 0;
@@ -81,7 +86,7 @@
             this.Push.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Push.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Push.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Push.Location = new System.Drawing.Point(497, 487);
+            this.Push.Location = new System.Drawing.Point(497, 512);
             this.Push.Name = "Push";
             this.Push.Size = new System.Drawing.Size(75, 23);
             this.Push.TabIndex = 1;
@@ -94,7 +99,7 @@
             this.Pull.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Pull.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pull.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Pull.Location = new System.Drawing.Point(12, 487);
+            this.Pull.Location = new System.Drawing.Point(12, 512);
             this.Pull.Name = "Pull";
             this.Pull.Size = new System.Drawing.Size(75, 23);
             this.Pull.TabIndex = 2;
@@ -107,7 +112,7 @@
             this.Fetch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Fetch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Fetch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Fetch.Location = new System.Drawing.Point(93, 487);
+            this.Fetch.Location = new System.Drawing.Point(93, 512);
             this.Fetch.Name = "Fetch";
             this.Fetch.Size = new System.Drawing.Size(75, 23);
             this.Fetch.TabIndex = 3;
@@ -120,7 +125,7 @@
             this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Exit.Location = new System.Drawing.Point(416, 487);
+            this.Exit.Location = new System.Drawing.Point(416, 512);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(75, 23);
             this.Exit.TabIndex = 4;
@@ -135,7 +140,7 @@
             this.CommitMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(65)))), ((int)(((byte)(71)))));
             this.CommitMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CommitMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.CommitMessage.Location = new System.Drawing.Point(12, 407);
+            this.CommitMessage.Location = new System.Drawing.Point(12, 432);
             this.CommitMessage.Multiline = true;
             this.CommitMessage.Name = "CommitMessage";
             this.CommitMessage.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -148,7 +153,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 392);
+            this.label1.Location = new System.Drawing.Point(12, 417);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 12);
             this.label1.TabIndex = 6;
@@ -179,60 +184,73 @@
             this.ファイルToolStripMenuItem.Text = "File(&F)";
             this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Text = "Open repository(&O)";
+            // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.終了ToolStripMenuItem.Text = "Exit(&X)";
             // 
-            // StageBtn
+            // repositoryRToolStripMenuItem
             // 
-            this.StageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.StageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StageBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.StageBtn.Location = new System.Drawing.Point(12, 350);
-            this.StageBtn.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.StageBtn.Name = "StageBtn";
-            this.StageBtn.Size = new System.Drawing.Size(93, 26);
-            this.StageBtn.TabIndex = 2;
-            this.StageBtn.Text = "Stage All";
-            this.StageBtn.UseVisualStyleBackColor = true;
-            this.StageBtn.Click += new System.EventHandler(this.button3_Click);
+            this.repositoryRToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newNToolStripMenuItem});
+            this.repositoryRToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.repositoryRToolStripMenuItem.Name = "repositoryRToolStripMenuItem";
+            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.repositoryRToolStripMenuItem.Text = "Repository(&R)";
+            // 
+            // newNToolStripMenuItem
+            // 
+            this.newNToolStripMenuItem.Name = "newNToolStripMenuItem";
+            this.newNToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.newNToolStripMenuItem.Text = "Clone(&N)";
+            // 
+            // helpHToolStripMenuItem
+            // 
+            this.helpHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gitClientについてToolStripMenuItem});
+            this.helpHToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.helpHToolStripMenuItem.Name = "helpHToolStripMenuItem";
+            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.helpHToolStripMenuItem.Text = "Help(&H)";
+            // 
+            // gitClientについてToolStripMenuItem
+            // 
+            this.gitClientについてToolStripMenuItem.Name = "gitClientについてToolStripMenuItem";
+            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gitClientについてToolStripMenuItem.Text = "GitClientについて...";
             // 
             // StagedFiles
             // 
-            this.StagedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.StagedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StagedFiles.FormattingEnabled = true;
             this.StagedFiles.ItemHeight = 12;
-            this.StagedFiles.Location = new System.Drawing.Point(298, 223);
+            this.StagedFiles.Location = new System.Drawing.Point(283, 3);
             this.StagedFiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.StagedFiles.Name = "StagedFiles";
-            this.StagedFiles.Size = new System.Drawing.Size(274, 124);
+            this.StagedFiles.Size = new System.Drawing.Size(274, 112);
             this.StagedFiles.TabIndex = 7;
             this.StagedFiles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // UnstageBtn
-            // 
-            this.UnstageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnstageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UnstageBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.UnstageBtn.Location = new System.Drawing.Point(397, 350);
-            this.UnstageBtn.Name = "UnstageBtn";
-            this.UnstageBtn.Size = new System.Drawing.Size(175, 26);
-            this.UnstageBtn.TabIndex = 2;
-            this.UnstageBtn.Text = "Unstage";
-            this.UnstageBtn.UseVisualStyleBackColor = true;
-            this.UnstageBtn.Click += new System.EventHandler(this.button3_Click);
-            // 
             // UnstagedFiles
             // 
-            this.UnstagedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.UnstagedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UnstagedFiles.FormattingEnabled = true;
             this.UnstagedFiles.ItemHeight = 12;
-            this.UnstagedFiles.Location = new System.Drawing.Point(12, 223);
+            this.UnstagedFiles.Location = new System.Drawing.Point(3, 3);
             this.UnstagedFiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.UnstagedFiles.Name = "UnstagedFiles";
-            this.UnstagedFiles.Size = new System.Drawing.Size(274, 124);
+            this.UnstagedFiles.Size = new System.Drawing.Size(274, 112);
             this.UnstagedFiles.TabIndex = 7;
             this.UnstagedFiles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -249,54 +267,30 @@
             this.label2.Text = "History";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(294, 208);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 12);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Staged files";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Line
             // 
             this.Line.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Line.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Line.Location = new System.Drawing.Point(22, 386);
+            this.Line.Location = new System.Drawing.Point(22, 411);
             this.Line.Name = "Line";
             this.Line.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Line.Size = new System.Drawing.Size(540, 1);
             this.Line.TabIndex = 9;
             this.Line.Click += new System.EventHandler(this.Line_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(111, 350);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 26);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Stage";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(298, 350);
+            this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 26);
+            this.button2.Size = new System.Drawing.Size(131, 25);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Unstage All";
+            this.button2.Text = "Stage All";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -315,7 +309,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(14, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 143);
+            this.dataGridView1.Size = new System.Drawing.Size(560, 168);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -348,7 +342,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(22, 201);
+            this.label4.Location = new System.Drawing.Point(22, 226);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Size = new System.Drawing.Size(540, 1);
@@ -359,7 +353,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(12, 208);
+            this.label5.Location = new System.Drawing.Point(12, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 12);
             this.label5.TabIndex = 6;
@@ -377,69 +371,125 @@
             this.label6.Size = new System.Drawing.Size(584, 1);
             this.label6.TabIndex = 13;
             // 
-            // openToolStripMenuItem
+            // tableLayoutPanel1
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.openToolStripMenuItem.Text = "Open repository(&O)";
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.StagedFiles, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.UnstagedFiles, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 248);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.62337F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.37662F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(560, 154);
+            this.tableLayoutPanel1.TabIndex = 14;
             // 
-            // repositoryRToolStripMenuItem
+            // tableLayoutPanel2
             // 
-            this.repositoryRToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newNToolStripMenuItem});
-            this.repositoryRToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.repositoryRToolStripMenuItem.Name = "repositoryRToolStripMenuItem";
-            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.repositoryRToolStripMenuItem.Text = "Repository(&R)";
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 120);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(274, 31);
+            this.tableLayoutPanel2.TabIndex = 15;
             // 
-            // helpHToolStripMenuItem
+            // tableLayoutPanel3
             // 
-            this.helpHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gitClientについてToolStripMenuItem});
-            this.helpHToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.helpHToolStripMenuItem.Name = "helpHToolStripMenuItem";
-            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.helpHToolStripMenuItem.Text = "Help(&H)";
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button4, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(283, 120);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(274, 31);
+            this.tableLayoutPanel3.TabIndex = 16;
             // 
-            // gitClientについてToolStripMenuItem
+            // button1
             // 
-            this.gitClientについてToolStripMenuItem.Name = "gitClientについてToolStripMenuItem";
-            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.gitClientについてToolStripMenuItem.Text = "GitClientについて...";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(140, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 25);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Stage";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button3_Click);
             // 
-            // newNToolStripMenuItem
+            // button3
             // 
-            this.newNToolStripMenuItem.Name = "newNToolStripMenuItem";
-            this.newNToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newNToolStripMenuItem.Text = "Clone(&N)";
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 25);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Unstage All";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Location = new System.Drawing.Point(140, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(131, 25);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Unstage";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(584, 522);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Line);
-            this.Controls.Add(this.UnstagedFiles);
+            this.ClientSize = new System.Drawing.Size(584, 547);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.StagedFiles);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.Line);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CommitMessage);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.UnstageBtn);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.StageBtn);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.Fetch);
-            this.Controls.Add(this.Pull);
-            this.Controls.Add(this.Push);
             this.Controls.Add(this.Commit);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.Pull);
+            this.Controls.Add(this.Fetch);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.Push);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Git Client";
@@ -447,6 +497,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,14 +517,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
-        private System.Windows.Forms.Button StageBtn;
         private System.Windows.Forms.ListBox StagedFiles;
-        private System.Windows.Forms.Button UnstageBtn;
         private System.Windows.Forms.ListBox UnstagedFiles;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Line;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
@@ -486,6 +535,12 @@
         private System.Windows.Forms.ToolStripMenuItem helpHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gitClientについてToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newNToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 
