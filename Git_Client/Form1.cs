@@ -29,7 +29,15 @@ namespace Git_Client
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            // Stage All
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
+            //出力を読み取れるようにする
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.RedirectStandardInput = false;
+            //ウィンドウを表示しないようにする
+            p.StartInfo.CreateNoWindow = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -53,6 +61,21 @@ namespace Git_Client
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Line_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ファイルToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

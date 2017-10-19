@@ -35,18 +35,28 @@
             this.Exit = new System.Windows.Forms.Button();
             this.CommitMessage = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.log = new System.Windows.Forms.ListBox();
-            this.StageList = new System.Windows.Forms.ListBox();
-            this.StageBtn = new System.Windows.Forms.Button();
-            this.UnstageBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.StageBtn = new System.Windows.Forms.Button();
+            this.StagedFiles = new System.Windows.Forms.ListBox();
+            this.UnstageBtn = new System.Windows.Forms.Button();
+            this.UnstagedFiles = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Line = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CommitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Commit
@@ -54,7 +64,7 @@
             this.Commit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Commit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Commit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Commit.Location = new System.Drawing.Point(497, 145);
+            this.Commit.Location = new System.Drawing.Point(497, 407);
             this.Commit.Name = "Commit";
             this.Commit.Size = new System.Drawing.Size(75, 74);
             this.Commit.TabIndex = 0;
@@ -66,7 +76,7 @@
             this.Push.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Push.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Push.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Push.Location = new System.Drawing.Point(497, 225);
+            this.Push.Location = new System.Drawing.Point(497, 487);
             this.Push.Name = "Push";
             this.Push.Size = new System.Drawing.Size(75, 23);
             this.Push.TabIndex = 1;
@@ -78,7 +88,7 @@
             this.Pull.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Pull.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pull.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Pull.Location = new System.Drawing.Point(12, 225);
+            this.Pull.Location = new System.Drawing.Point(12, 487);
             this.Pull.Name = "Pull";
             this.Pull.Size = new System.Drawing.Size(75, 23);
             this.Pull.TabIndex = 2;
@@ -91,7 +101,7 @@
             this.Fetch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Fetch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Fetch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Fetch.Location = new System.Drawing.Point(93, 225);
+            this.Fetch.Location = new System.Drawing.Point(93, 487);
             this.Fetch.Name = "Fetch";
             this.Fetch.Size = new System.Drawing.Size(75, 23);
             this.Fetch.TabIndex = 3;
@@ -104,7 +114,7 @@
             this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Exit.Location = new System.Drawing.Point(416, 225);
+            this.Exit.Location = new System.Drawing.Point(416, 487);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(75, 23);
             this.Exit.TabIndex = 4;
@@ -119,7 +129,7 @@
             this.CommitMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(28)))));
             this.CommitMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CommitMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.CommitMessage.Location = new System.Drawing.Point(12, 145);
+            this.CommitMessage.Location = new System.Drawing.Point(12, 407);
             this.CommitMessage.Multiline = true;
             this.CommitMessage.Name = "CommitMessage";
             this.CommitMessage.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -132,97 +142,12 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 130);
+            this.label1.Location = new System.Drawing.Point(12, 392);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 12);
             this.label1.TabIndex = 6;
             this.label1.Text = "Commit message";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // log
-            // 
-            this.log.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.log.FormattingEnabled = true;
-            this.log.ItemHeight = 12;
-            this.log.Location = new System.Drawing.Point(3, 23);
-            this.log.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(179, 64);
-            this.log.TabIndex = 7;
-            this.log.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // StageList
-            // 
-            this.StageList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.StageList.FormattingEnabled = true;
-            this.StageList.ItemHeight = 12;
-            this.StageList.Location = new System.Drawing.Point(374, 23);
-            this.StageList.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.StageList.Name = "StageList";
-            this.StageList.Size = new System.Drawing.Size(181, 64);
-            this.StageList.TabIndex = 7;
-            this.StageList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // StageBtn
-            // 
-            this.StageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.StageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StageBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.StageBtn.Location = new System.Drawing.Point(188, 23);
-            this.StageBtn.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.StageBtn.Name = "StageBtn";
-            this.StageBtn.Size = new System.Drawing.Size(180, 64);
-            this.StageBtn.TabIndex = 2;
-            this.StageBtn.Text = "Stage";
-            this.StageBtn.UseVisualStyleBackColor = true;
-            this.StageBtn.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // UnstageBtn
-            // 
-            this.UnstageBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.UnstageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UnstageBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.UnstageBtn.Location = new System.Drawing.Point(188, 0);
-            this.UnstageBtn.Name = "UnstageBtn";
-            this.UnstageBtn.Size = new System.Drawing.Size(180, 20);
-            this.UnstageBtn.TabIndex = 2;
-            this.UnstageBtn.Text = "Unstage";
-            this.UnstageBtn.UseVisualStyleBackColor = true;
-            this.UnstageBtn.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "File list";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(374, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Index stage list";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
@@ -241,48 +166,229 @@
             this.終了ToolStripMenuItem});
             this.ファイルToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
-            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
-            this.ファイルToolStripMenuItem.Text = "ファイル";
+            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.ファイルToolStripMenuItem.Text = "File(&F)";
+            this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
             this.終了ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.終了ToolStripMenuItem.Text = "終了";
+            this.終了ToolStripMenuItem.Text = "Exit(&X)";
             // 
-            // tableLayoutPanel1
+            // StageBtn
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.StageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.StageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StageBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.StageBtn.Location = new System.Drawing.Point(12, 350);
+            this.StageBtn.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.StageBtn.Name = "StageBtn";
+            this.StageBtn.Size = new System.Drawing.Size(93, 26);
+            this.StageBtn.TabIndex = 2;
+            this.StageBtn.Text = "Stage All";
+            this.StageBtn.UseVisualStyleBackColor = true;
+            this.StageBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // StagedFiles
+            // 
+            this.StagedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.StagedFiles.FormattingEnabled = true;
+            this.StagedFiles.ItemHeight = 12;
+            this.StagedFiles.Location = new System.Drawing.Point(298, 223);
+            this.StagedFiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.StagedFiles.Name = "StagedFiles";
+            this.StagedFiles.Size = new System.Drawing.Size(274, 124);
+            this.StagedFiles.TabIndex = 7;
+            this.StagedFiles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // UnstageBtn
+            // 
+            this.UnstageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UnstageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UnstageBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.UnstageBtn.Location = new System.Drawing.Point(397, 350);
+            this.UnstageBtn.Name = "UnstageBtn";
+            this.UnstageBtn.Size = new System.Drawing.Size(175, 26);
+            this.UnstageBtn.TabIndex = 2;
+            this.UnstageBtn.Text = "Unstage";
+            this.UnstageBtn.UseVisualStyleBackColor = true;
+            this.UnstageBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // UnstagedFiles
+            // 
+            this.UnstagedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.UnstagedFiles.FormattingEnabled = true;
+            this.UnstagedFiles.ItemHeight = 12;
+            this.UnstagedFiles.Location = new System.Drawing.Point(12, 223);
+            this.UnstagedFiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.UnstagedFiles.Name = "UnstagedFiles";
+            this.UnstagedFiles.Size = new System.Drawing.Size(274, 124);
+            this.UnstagedFiles.TabIndex = 7;
+            this.UnstagedFiles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(10, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "History";
+            this.label2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(294, 208);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 12);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Staged files";
+            this.label3.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // Line
+            // 
+            this.Line.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Line.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Line.Location = new System.Drawing.Point(22, 386);
+            this.Line.Name = "Line";
+            this.Line.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Line.Size = new System.Drawing.Size(540, 1);
+            this.Line.TabIndex = 9;
+            this.Line.Click += new System.EventHandler(this.Line_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(111, 350);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 26);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Stage";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(298, 350);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 26);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Unstage All";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.StageBtn, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.StageList, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.log, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.UnstageBtn, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 29);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(558, 98);
-            this.tableLayoutPanel1.TabIndex = 9;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Autor,
+            this.Description,
+            this.Date,
+            this.CommitId});
+            this.dataGridView1.Location = new System.Drawing.Point(14, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 21;
+            this.dataGridView1.Size = new System.Drawing.Size(560, 143);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(22, 201);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Size = new System.Drawing.Size(540, 1);
+            this.label4.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(12, 208);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 12);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Unstaged files";
+            this.label5.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(0, 28);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Size = new System.Drawing.Size(584, 1);
+            this.label6.TabIndex = 13;
+            // 
+            // Autor
+            // 
+            this.Autor.HeaderText = "Autor";
+            this.Autor.Name = "Autor";
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // CommitId
+            // 
+            this.CommitId.HeaderText = "Commit";
+            this.CommitId.Name = "CommitId";
+            this.CommitId.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(584, 260);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(584, 522);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Line);
+            this.Controls.Add(this.UnstagedFiles);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.StagedFiles);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CommitMessage);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.UnstageBtn);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.StageBtn);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Fetch);
             this.Controls.Add(this.Pull);
@@ -295,8 +401,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,16 +416,26 @@
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.TextBox CommitMessage;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox log;
-        private System.Windows.Forms.ListBox StageList;
-        private System.Windows.Forms.Button StageBtn;
-        private System.Windows.Forms.Button UnstageBtn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button StageBtn;
+        private System.Windows.Forms.ListBox StagedFiles;
+        private System.Windows.Forms.Button UnstageBtn;
+        private System.Windows.Forms.ListBox UnstagedFiles;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Line;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommitId;
     }
 }
 
