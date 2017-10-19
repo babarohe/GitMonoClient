@@ -115,6 +115,16 @@ namespace Git_Client
             p.WaitForExit();
             p.Close();
         }
+
+        private void newNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GetGitHistory()
+        {
+            string cmd = "git log --pretty = 'format:%h,%cd,%s,%d,%an,'--date = iso";
+        }
     }
 
 }

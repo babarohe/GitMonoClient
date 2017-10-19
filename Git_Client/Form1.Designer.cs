@@ -55,6 +55,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repositoryRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gitClientについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +132,7 @@
             // 
             this.CommitMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommitMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(28)))));
+            this.CommitMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(65)))), ((int)(((byte)(71)))));
             this.CommitMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CommitMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.CommitMessage.Location = new System.Drawing.Point(12, 407);
@@ -152,29 +157,32 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(94)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルToolStripMenuItem});
+            this.ファイルToolStripMenuItem,
+            this.repositoryRToolStripMenuItem,
+            this.helpHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(584, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ファイルToolStripMenuItem
             // 
             this.ファイルToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
             this.終了ToolStripMenuItem});
             this.ファイルToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
-            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.ファイルToolStripMenuItem.Text = "File(&F)";
             this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.終了ToolStripMenuItem.Text = "Exit(&X)";
             // 
             // StageBtn
@@ -369,11 +377,47 @@
             this.label6.Size = new System.Drawing.Size(584, 1);
             this.label6.TabIndex = 13;
             // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Text = "Open repository(&O)";
+            // 
+            // repositoryRToolStripMenuItem
+            // 
+            this.repositoryRToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newNToolStripMenuItem});
+            this.repositoryRToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.repositoryRToolStripMenuItem.Name = "repositoryRToolStripMenuItem";
+            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.repositoryRToolStripMenuItem.Text = "Repository(&R)";
+            // 
+            // helpHToolStripMenuItem
+            // 
+            this.helpHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gitClientについてToolStripMenuItem});
+            this.helpHToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.helpHToolStripMenuItem.Name = "helpHToolStripMenuItem";
+            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.helpHToolStripMenuItem.Text = "Help(&H)";
+            // 
+            // gitClientについてToolStripMenuItem
+            // 
+            this.gitClientについてToolStripMenuItem.Name = "gitClientについてToolStripMenuItem";
+            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gitClientについてToolStripMenuItem.Text = "GitClientについて...";
+            // 
+            // newNToolStripMenuItem
+            // 
+            this.newNToolStripMenuItem.Name = "newNToolStripMenuItem";
+            this.newNToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newNToolStripMenuItem.Text = "Clone(&N)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(584, 522);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -437,6 +481,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn CommitId;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repositoryRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gitClientについてToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newNToolStripMenuItem;
     }
 }
 
