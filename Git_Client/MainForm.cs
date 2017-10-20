@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Git_Client
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -94,6 +94,10 @@ namespace Git_Client
 
         private void Push_Click(object sender, EventArgs e)
         {
+            // ウィンドウ作成
+            ProgressForm pfWindow = new ProgressForm();
+            pfWindow.Show();
+
             // Stage All
             System.Diagnostics.Process p = new System.Diagnostics.Process();
             p.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
@@ -114,6 +118,11 @@ namespace Git_Client
             //(親プロセス、子プロセスでブロック防止のため)
             p.WaitForExit();
             p.Close();
+
+            // ウィンドウ閉じる
+            // pfWindow.Close();
+            // pfWindow = null;
+
         }
 
         private void newNToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,6 +133,15 @@ namespace Git_Client
         private void GetGitHistory()
         {
             string cmd = "git log --pretty = 'format:%h,%cd,%s,%d,%an,'--date = iso";
+        }
+
+        private void Commit_Click(object sender, EventArgs e)
+        {
+            ProgressForm pfWindow = new ProgressForm();
+            pfWindow.Show();
+
+            pfWindow.Close();
+            pfWindow = null;
         }
     }
 
