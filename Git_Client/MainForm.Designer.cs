@@ -62,7 +62,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -171,7 +170,7 @@
             this.helpHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(584, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,20 +181,20 @@
             this.終了ToolStripMenuItem});
             this.ファイルToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
-            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.ファイルToolStripMenuItem.Text = "File(&F)";
             this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.openToolStripMenuItem.Text = "Open repository(&O)";
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.終了ToolStripMenuItem.Text = "Exit(&X)";
             // 
             // repositoryRToolStripMenuItem
@@ -204,13 +203,13 @@
             this.newNToolStripMenuItem});
             this.repositoryRToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.repositoryRToolStripMenuItem.Name = "repositoryRToolStripMenuItem";
-            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.repositoryRToolStripMenuItem.Text = "Repository(&R)";
             // 
             // newNToolStripMenuItem
             // 
             this.newNToolStripMenuItem.Name = "newNToolStripMenuItem";
-            this.newNToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.newNToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.newNToolStripMenuItem.Text = "Clone(&N)";
             // 
             // helpHToolStripMenuItem
@@ -219,13 +218,13 @@
             this.gitClientについてToolStripMenuItem});
             this.helpHToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.helpHToolStripMenuItem.Name = "helpHToolStripMenuItem";
-            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
+            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.helpHToolStripMenuItem.Text = "Help(&H)";
             // 
             // gitClientについてToolStripMenuItem
             // 
             this.gitClientについてToolStripMenuItem.Name = "gitClientについてToolStripMenuItem";
-            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.gitClientについてToolStripMenuItem.Text = "GitClientについて...";
             // 
             // StagedFiles
@@ -471,26 +470,12 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button3_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(174, 512);
-            this.progressBar1.MarqueeAnimationSpeed = 10;
-            this.progressBar1.Maximum = 10;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(236, 23);
-            this.progressBar1.Step = 100;
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 15;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(584, 547);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label6);
@@ -557,7 +542,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
