@@ -9,6 +9,10 @@ namespace Git_Client
     class GitCli
     {
         public string output = "";
+        private string std_out = "";
+        private string std_err = "";
+        
+
         public ProgressForm gui;
 
         public GitCli(ProgressForm gui_obj)
@@ -47,6 +51,47 @@ namespace Git_Client
             return 0;
         }
 
+        public int GetHistory()
+        {
+            int result = this.Exec("git log --pretty=%an,%s,%h,%ad --date=iso");
+
+            Console.Write(this.std_out);
+
+            // 戻り値チェック
+            if (result != 0)
+            {
+                // 戻り値エラー
+                return -1;
+            }
+
+            string history_raw = this.std_out.Replace("\r\n", "\n");
+
+            string[,] logs;
+
+            int i = 0;
+
+            foreach (string row in history_raw.Split('\n'))
+            {
+                // logs = new string[i, 4];
+                // string[] row_sprit = row.Split(',');
+
+                logs = new string[i+1, 4];
+                logs[i, 0] = "aaa";
+                logs[i, 1] = "bbb";
+                logs[i, 2] = "ccc";
+                logs[i, 3] = "ddd";
+
+
+                i++;
+            }
+            
+            string[] words = this.std_out.Split(',');
+
+            Console.Write("===");
+
+            return 0;
+        }
+
         public int Exec(string cmd)
         {
             //Processオブジェクトを作成
@@ -57,8 +102,8 @@ namespace Git_Client
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.RedirectStandardError = true;
             //OutputDataReceivedイベントハンドラを追加
-            p.OutputDataReceived += p_OutputDataReceived;
-            p.ErrorDataReceived += p_OutputDataReceived;
+            p.OutputDataReceived += p_StdOutputDataReceived;
+            p.ErrorDataReceived += p_StdErrorDataReceived;
 
             p.StartInfo.FileName =
                 System.Environment.GetEnvironmentVariable("ComSpec");
@@ -88,19 +133,21 @@ namespace Git_Client
             Console.ReadLine();
 
 
-            return 0;
+            return int.Parse(exit_code);
         }
 
 
-        private void p_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
+        private void p_StdOutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
         {
-            //出力された文字列を表示する
+            std_out += e.Data + "\r\n";
             output += e.Data + "\r\n";
         }
 
-        private void invoke()
+        private void p_StdErrorDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
         {
-            throw new NotImplementedException();
+            std_err += e.Data + "\r\n";
+            output += e.Data + "\r\n";
         }
+
     }
 }

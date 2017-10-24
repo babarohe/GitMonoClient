@@ -117,7 +117,7 @@ namespace Git_Client
 
         private void GetGitHistory()
         {
-            string cmd = "git log --pretty = 'format:%h,%cd,%s,%d,%an,'--date = iso";
+
         }
 
         private void Commit_Click(object sender, EventArgs e)
@@ -136,6 +136,42 @@ namespace Git_Client
             pfWindow.WriteLog(git.output);
 
             CommitMessage.Text = "";
+
+        }
+
+        private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 終了ボタン
+            this.Close();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 開くボタン
+            // OpenFileDialog o = new OpenFileDialog();
+            // o.Title = "Select a repository folder";
+
+            FolderBrowserDialog f = new FolderBrowserDialog();
+            f.Description = "Select a repository folder";
+            f.ShowDialog();
+
+            // this.OpenDialog.ShowDialog();
+
+        }
+
+        private void OpenDialog_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void DebugBtn_Click(object sender, EventArgs e)
+        {
+            ProgressForm pfWindow = new ProgressForm();
+            pfWindow.Show();
+            GitCli git = new GitCli(pfWindow);
+            git.GetHistory();
+
+            pfWindow.WriteLog(git.output);
 
         }
     }
