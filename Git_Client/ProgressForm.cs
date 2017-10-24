@@ -36,5 +36,15 @@ namespace Git_Client
         {
             this.Close();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void WriteLog(string output)
+        {
+            this.StdOutput.Text += output;
+        }
     }
 }

@@ -97,27 +97,11 @@ namespace Git_Client
             // ウィンドウ作成
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
+            GitCli git = new GitCli(pfWindow);
+            git.Push();
 
-            // Stage All
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
-            p.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
-            //出力を読み取れるようにする
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.RedirectStandardInput = false;
-            //ウィンドウを表示しないようにする
-            p.StartInfo.CreateNoWindow = true;
-            //コマンドラインを指定（"/c"は実行後閉じるために必要）
-            p.StartInfo.Arguments = @"/c git push";
-            //起動
-            p.Start();
-            //出力を読み取る
-            string results = p.StandardOutput.ReadToEnd();
-            //プロセス終了まで待機する
-            //WaitForExitはReadToEndの後である必要がある
-            //(親プロセス、子プロセスでブロック防止のため)
-            p.WaitForExit();
-            p.Close();
+            // pfWindow.WriteLog(git.output);
+            
 
             // ウィンドウ閉じる
             // pfWindow.Close();

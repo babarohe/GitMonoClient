@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.StdOutput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,17 +47,20 @@
             this.progressBar1.TabIndex = 0;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
-            // textBox1
+            // StdOutput
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.StdOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(12, 87);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(394, 244);
-            this.textBox1.TabIndex = 1;
+            this.StdOutput.BackColor = System.Drawing.SystemColors.InfoText;
+            this.StdOutput.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.StdOutput.Location = new System.Drawing.Point(12, 87);
+            this.StdOutput.Multiline = true;
+            this.StdOutput.Name = "StdOutput";
+            this.StdOutput.ReadOnly = true;
+            this.StdOutput.Size = new System.Drawing.Size(394, 244);
+            this.StdOutput.TabIndex = 1;
+            this.StdOutput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -104,7 +107,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.StdOutput);
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProgressForm";
@@ -118,7 +121,7 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox StdOutput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label label2;
