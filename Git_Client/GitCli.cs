@@ -27,6 +27,25 @@ namespace Git_Client
             return 0;
         }
 
+        public int Pull()
+        {
+            this.Exec("git pull");
+
+            return 0;
+        }
+
+        public int Fetch()
+        {
+            this.Exec("git fetch");
+
+            return 0;
+        }
+
+        public int Commit(string message)
+        {
+            this.Exec("git commit -m \"" + message + "\"");
+            return 0;
+        }
 
         public int Exec(string cmd)
         {
@@ -58,9 +77,13 @@ namespace Git_Client
 
             // output = p.StandardOutput.ReadToEnd();
             // output = p.StandardError.ReadToEnd();
-            p.Close();
 
-            output += "git.exe はコード 0 (0x0) で終了しました。\r\n";
+            string exit_code = p.ExitCode.ToString();
+
+            p.Close();
+            
+
+            output += String.Format("git.exe はコード {0} (0x{1:X}) で終了しました。\r\n", exit_code, int.Parse(exit_code));
 
             Console.ReadLine();
 

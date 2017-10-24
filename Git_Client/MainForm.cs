@@ -24,31 +24,24 @@ namespace Git_Client
 
         private void button4_Click(object sender, EventArgs e)
         {
+            // Fetch
+            ProgressForm pfWindow = new ProgressForm();
+            pfWindow.Show();
+            GitCli git = new GitCli(pfWindow);
+            git.Fetch();
 
+            pfWindow.WriteLog(git.output);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Stage All
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
-            p.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
-            //出力を読み取れるようにする
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.RedirectStandardInput = false;
-            //ウィンドウを表示しないようにする
-            p.StartInfo.CreateNoWindow = true;
-            //コマンドラインを指定（"/c"は実行後閉じるために必要）
-            p.StartInfo.Arguments = @"/c git add *";
-            //起動
-            p.Start();
-            //出力を読み取る
-            string results = p.StandardOutput.ReadToEnd();
-            //プロセス終了まで待機する
-            //WaitForExitはReadToEndの後である必要がある
-            //(親プロセス、子プロセスでブロック防止のため)
-            p.WaitForExit();
-            p.Close();
+            // Pull
+            ProgressForm pfWindow = new ProgressForm();
+            pfWindow.Show();
+            GitCli git = new GitCli(pfWindow);
+            git.Pull();
+
+            pfWindow.WriteLog(git.output);
 
         }
 
@@ -121,11 +114,21 @@ namespace Git_Client
 
         private void Commit_Click(object sender, EventArgs e)
         {
+            if (CommitMessage.Text == "")
+            {
+                CommitMessage.Select();
+                return;
+            }
+
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
+            GitCli git = new GitCli(pfWindow);
+            git.Commit(CommitMessage.Text);
 
-            pfWindow.Close();
-            pfWindow = null;
+            pfWindow.WriteLog(git.output);
+
+            CommitMessage.Text = "";
+
         }
     }
 

@@ -170,7 +170,7 @@
             this.helpHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(584, 26);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -181,20 +181,20 @@
             this.終了ToolStripMenuItem});
             this.ファイルToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
-            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
             this.ファイルToolStripMenuItem.Text = "File(&F)";
             this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.openToolStripMenuItem.Text = "Open repository(&O)";
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.終了ToolStripMenuItem.Text = "Exit(&X)";
             // 
             // repositoryRToolStripMenuItem
@@ -203,13 +203,13 @@
             this.newNToolStripMenuItem});
             this.repositoryRToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.repositoryRToolStripMenuItem.Name = "repositoryRToolStripMenuItem";
-            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.repositoryRToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.repositoryRToolStripMenuItem.Text = "Repository(&R)";
             // 
             // newNToolStripMenuItem
             // 
             this.newNToolStripMenuItem.Name = "newNToolStripMenuItem";
-            this.newNToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.newNToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.newNToolStripMenuItem.Text = "Clone(&N)";
             // 
             // helpHToolStripMenuItem
@@ -218,13 +218,13 @@
             this.gitClientについてToolStripMenuItem});
             this.helpHToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.helpHToolStripMenuItem.Name = "helpHToolStripMenuItem";
-            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.helpHToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
             this.helpHToolStripMenuItem.Text = "Help(&H)";
             // 
             // gitClientについてToolStripMenuItem
             // 
             this.gitClientについてToolStripMenuItem.Name = "gitClientについてToolStripMenuItem";
-            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gitClientについてToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.gitClientについてToolStripMenuItem.Text = "GitClientについて...";
             // 
             // StagedFiles
