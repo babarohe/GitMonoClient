@@ -100,7 +100,7 @@ namespace Git_Client
             GitCli git = new GitCli(pfWindow);
             git.Push();
 
-            // pfWindow.WriteLog(git.output);
+            pfWindow.WriteLog(git.output);
             
 
             // ウィンドウ閉じる
