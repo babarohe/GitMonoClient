@@ -58,7 +58,7 @@
             this.StdOutput.Multiline = true;
             this.StdOutput.Name = "StdOutput";
             this.StdOutput.ReadOnly = true;
-            this.StdOutput.Size = new System.Drawing.Size(394, 244);
+            this.StdOutput.Size = new System.Drawing.Size(394, 151);
             this.StdOutput.TabIndex = 1;
             this.StdOutput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -78,7 +78,7 @@
             this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Exit.Location = new System.Drawing.Point(331, 337);
+            this.Exit.Location = new System.Drawing.Point(331, 244);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(75, 23);
             this.Exit.TabIndex = 5;
@@ -102,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(418, 372);
+            this.ClientSize = new System.Drawing.Size(418, 279);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit);

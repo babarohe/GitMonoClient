@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Commit = new System.Windows.Forms.Button();
+            this.CommitBtn = new System.Windows.Forms.Button();
             this.Push = new System.Windows.Forms.Button();
             this.Pull = new System.Windows.Forms.Button();
             this.Fetch = new System.Windows.Forms.Button();
@@ -69,18 +69,18 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Commit
+            // CommitBtn
             // 
-            this.Commit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Commit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Commit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Commit.Location = new System.Drawing.Point(497, 432);
-            this.Commit.Name = "Commit";
-            this.Commit.Size = new System.Drawing.Size(75, 74);
-            this.Commit.TabIndex = 0;
-            this.Commit.Text = "Commit";
-            this.Commit.UseVisualStyleBackColor = true;
-            this.Commit.Click += new System.EventHandler(this.Commit_Click);
+            this.CommitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CommitBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CommitBtn.Location = new System.Drawing.Point(497, 432);
+            this.CommitBtn.Name = "CommitBtn";
+            this.CommitBtn.Size = new System.Drawing.Size(75, 74);
+            this.CommitBtn.TabIndex = 0;
+            this.CommitBtn.Text = "Commit";
+            this.CommitBtn.UseVisualStyleBackColor = true;
+            this.CommitBtn.Click += new System.EventHandler(this.Commit_Click);
             // 
             // Push
             // 
@@ -486,7 +486,7 @@
             this.Controls.Add(this.Line);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CommitMessage);
-            this.Controls.Add(this.Commit);
+            this.Controls.Add(this.CommitBtn);
             this.Controls.Add(this.Pull);
             this.Controls.Add(this.Fetch);
             this.Controls.Add(this.Exit);
@@ -508,7 +508,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Commit;
+        private System.Windows.Forms.Button CommitBtn;
         private System.Windows.Forms.Button Push;
         private System.Windows.Forms.Button Pull;
         private System.Windows.Forms.Button Fetch;

@@ -57,7 +57,15 @@ namespace Git_Client
 
         private void CommitMessage_TextChanged(object sender, EventArgs e)
         {
-
+            if (CommitMessage.Text == "")
+            {
+                CommitBtn.Enabled = false;
+                // CommitBtn.BackColor;
+            }
+            else
+            {
+                CommitBtn.Enabled = true;
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
