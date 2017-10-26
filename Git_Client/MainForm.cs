@@ -166,21 +166,55 @@ namespace Git_Client
 
         private void DebugBtn_Click(object sender, EventArgs e)
         {
-            ProgressForm pfWindow = new ProgressForm();
-            pfWindow.Show();
             GitCli git = new GitCli();
             git.GetHistory();
 
-            git.logs.ToArray(typeof(string));
+            // git.logs.ToArray(typeof(string));
 
-            foreach(string row in git.logs.ToArray(typeof(string)))
+            dataGridView1.Rows.Clear();
+
+            System.Text.Encoding src = Encoding.ASCII;
+            System.Text.Encoding dest = Encoding.GetEncoding("utf-16");
+
+            foreach (string[] row in git.log_list)
             {
-                dataGridView1.Rows.Add(row[0]);
+                string auther = "";
+                string description = "";
+                string date = "";
+                string commit = "";
+
+                if (row.Length > 3)
+                {
+                    auther = row[0];
+                    description = row[1];
+                    date = row[2];
+                    commit = row[3];
+                }
+                else if (row.Length > 2)
+                {
+                    auther = row[0];
+                    description = row[1];
+                    date = row[2];
+                }
+                else if (row.Length > 1)
+                {
+                    auther = row[0];
+                    description = row[1];
+                }
+                else if (row.Length > 0)
+                {
+                    auther = row[0];
+                }
+
+                string str = description;
+                byte[] temp = src.GetBytes(str);
+                byte[] sjis_temp = Encoding.Convert(src, dest, temp);
+                string sjis_str = dest.GetString(sjis_temp);
+
+
+                dataGridView1.Rows.Add(auther, sjis_str, commit, date);
 
             }
-
-
-            pfWindow.WriteLog(git.output);
 
         }
     }

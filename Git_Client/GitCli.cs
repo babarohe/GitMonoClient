@@ -14,6 +14,8 @@ namespace Git_Client
         public string output = "";
         public ArrayList logs = new ArrayList();
 
+        public List<string[]> log_list = new List<string[]>();
+
         private string std_out = "";
         private string std_err = "";
         
@@ -56,7 +58,7 @@ namespace Git_Client
 
         public int GetHistory()
         {
-            int result = this.Exec("git log --pretty=%an?%s?%h?%ad --date=iso");
+            int result = this.Exec("git log --pretty=%an#%s#%h#%ad --date=iso");
 
             Console.Write(this.std_out);
 
@@ -75,18 +77,19 @@ namespace Git_Client
 
             foreach (string row in history_raw.Split('\n'))
             {
-                this.logs.Add(row.Split('?'));
+                this.logs.Add(row.Split('#'));
+                this.log_list.Add(row.Split('#'));
 
                 i++;
             }
             
-            string[] words = this.std_out.Split('?');
+            string[] words = this.std_out.Split('#');
 
             Console.Write("===");
 
             return 0;
         }
-
+        
         public int Exec(string cmd)
         {
             //Processオブジェクトを作成
