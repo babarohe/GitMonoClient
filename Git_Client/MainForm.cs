@@ -171,6 +171,11 @@ namespace Git_Client
             GitCli git = new GitCli(pfWindow);
             git.GetHistory();
 
+            
+
+            dataGridView1.Rows.Add("aaa", "bbb", "ccc", "ddd");
+
+
             pfWindow.WriteLog(git.output);
 
         }

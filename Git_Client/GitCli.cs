@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+using System.Diagnostics;
+using static System.Console;
 
 namespace Git_Client
 {
     class GitCli
     {
         public string output = "";
+        public ArrayList logs = new ArrayList();
+
         private string std_out = "";
         private string std_err = "";
         
@@ -66,20 +71,12 @@ namespace Git_Client
 
             string history_raw = this.std_out.Replace("\r\n", "\n");
 
-            string[,] logs;
-
             int i = 0;
+
 
             foreach (string row in history_raw.Split('\n'))
             {
-                // logs = new string[i, 4];
-                // string[] row_sprit = row.Split(',');
-
-                logs = new string[i+1, 4];
-                logs[i, 0] = "aaa";
-                logs[i, 1] = "bbb";
-                logs[i, 2] = "ccc";
-                logs[i, 3] = "ddd";
+                this.logs.Add("");
 
 
                 i++;
