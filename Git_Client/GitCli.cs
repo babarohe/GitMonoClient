@@ -18,11 +18,9 @@ namespace Git_Client
         private string std_err = "";
         
 
-        public ProgressForm gui;
-
-        public GitCli(ProgressForm gui_obj)
+        public GitCli()
         {
-            this.gui = gui_obj;
+            // コンストラクタ
         }
 
         public int Push()
@@ -58,7 +56,7 @@ namespace Git_Client
 
         public int GetHistory()
         {
-            int result = this.Exec("git log --pretty=%an,%s,%h,%ad --date=iso");
+            int result = this.Exec("git log --pretty=%an?%s?%h?%ad --date=iso");
 
             Console.Write(this.std_out);
 
@@ -73,16 +71,16 @@ namespace Git_Client
 
             int i = 0;
 
+            List<string> log_buf = new List<string>();
 
             foreach (string row in history_raw.Split('\n'))
             {
-                this.logs.Add("");
-
+                this.logs.Add(row.Split('?'));
 
                 i++;
             }
             
-            string[] words = this.std_out.Split(',');
+            string[] words = this.std_out.Split('?');
 
             Console.Write("===");
 

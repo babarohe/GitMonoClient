@@ -27,7 +27,7 @@ namespace Git_Client
             // Fetch
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
-            GitCli git = new GitCli(pfWindow);
+            GitCli git = new GitCli();
             git.Fetch();
 
             pfWindow.WriteLog(git.output);
@@ -38,7 +38,7 @@ namespace Git_Client
             // Pull
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
-            GitCli git = new GitCli(pfWindow);
+            GitCli git = new GitCli();
             git.Pull();
 
             pfWindow.WriteLog(git.output);
@@ -98,7 +98,7 @@ namespace Git_Client
             // ウィンドウ作成
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
-            GitCli git = new GitCli(pfWindow);
+            GitCli git = new GitCli();
             git.Push();
 
             pfWindow.WriteLog(git.output);
@@ -130,7 +130,7 @@ namespace Git_Client
 
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
-            GitCli git = new GitCli(pfWindow);
+            GitCli git = new GitCli();
             git.Commit(CommitMessage.Text);
 
             pfWindow.WriteLog(git.output);
@@ -168,12 +168,16 @@ namespace Git_Client
         {
             ProgressForm pfWindow = new ProgressForm();
             pfWindow.Show();
-            GitCli git = new GitCli(pfWindow);
+            GitCli git = new GitCli();
             git.GetHistory();
 
-            
+            git.logs.ToArray(typeof(string));
 
-            dataGridView1.Rows.Add("aaa", "bbb", "ccc", "ddd");
+            foreach(string row in git.logs.ToArray(typeof(string)))
+            {
+                dataGridView1.Rows.Add(row[0]);
+
+            }
 
 
             pfWindow.WriteLog(git.output);
